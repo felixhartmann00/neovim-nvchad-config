@@ -10,6 +10,23 @@ lspconfig.rust_analyzer.setup({
   root_dir = lspconfig.util.root_pattern("Cargo.toml"),
 })
 
+lspconfig.clangd.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = { "clangd" },
+  filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
+  root_dir = lspconfig.util.root_pattern('.clangd','.clang-tidy','.clang-format','compile_commands.json','compile_flags.txt','configure.ac','.git'),
+}
+
+lspconfig.jdtls.setup {
+  cmd = { "jdtls", "-configuration", "/home/user/.cache/jdtls/config", "-data", "/home/user/.cache/jdtls/workspace" },
+  filetypes = { "java" },
+  init_options = {
+    jvm_args = {},
+    workspace = "/home/user/.cache/jdtls/workspace"
+  },
+}
+
 lspconfig.azure_pipelines_ls.setup {
   on_attach = on_attach,
   capabilities = capabilities,

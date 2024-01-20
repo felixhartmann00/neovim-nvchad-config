@@ -23,7 +23,7 @@ local plugins = {
         "htmx-lsp",
         "html-lsp",
         "haskell-language-server",
-        "java-language-server",
+        "jdtls",
         "typescript-language-server",
         "sqlls",
       }
