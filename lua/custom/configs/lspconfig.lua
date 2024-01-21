@@ -19,12 +19,13 @@ lspconfig.clangd.setup {
 }
 
 lspconfig.jdtls.setup {
-  cmd = { "jdtls", "-configuration", "/home/user/.cache/jdtls/config", "-data", "/home/user/.cache/jdtls/workspace" },
+  cmd = { "jdtls" },
   filetypes = { "java" },
   init_options = {
     jvm_args = {},
     workspace = "/home/user/.cache/jdtls/workspace"
   },
+  -- root_dir = lspconfig.util.root_pattern('./src/App.java'),
 }
 
 lspconfig.azure_pipelines_ls.setup {
